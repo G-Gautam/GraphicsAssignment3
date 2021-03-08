@@ -1,3 +1,23 @@
+'''
+Module Name: tessel
+Author: CS3388
+Contributor: Gautam Gupta
+DOC: 03-07-2021
+
+Purpose: This class tesselates (fills a plane with repeating polygons) the objects of a graphical scene into convex polygons
+and computes the color shade to fill the polgons with. It uses different polymetric object, camera, and a light source to 
+achieve this.
+
+Parameters:
+objectList: A list of parametric objects from the previous assingment of type parametricObject
+camera: A cameraMatrix object to implement a synthethic camera matrix
+light: A single lightsource of type lightSource which has a set position and intensity to influence the color index
+
+Contribution:
+Implemented the constructor of the class including the decleration of instance variables as needed. The constructor utilizes
+the predefined and implemented helper methods of the class to tesselate parametric objects. The code for the constructor was
+written based on the guided comments (left in code).
+'''
 import numpy as np
 from matrix import matrix
 
@@ -78,7 +98,7 @@ class tessel:
                     v += obj.getUVDelta()[1]
                 #u becomes u + delta u
                 u += obj.getUVDelta()[0]
-                
+
     def __minCoordinate(self,facePoints,coord): 
 	#Computes the minimum X, Y, or Z coordinate from a list of 3D points
 	#Coord = 0 indicates minimum X coord, 1 indicates minimum Y coord, 2 indicates minimum Z coord.
